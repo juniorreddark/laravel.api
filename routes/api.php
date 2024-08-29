@@ -9,8 +9,7 @@ use App\http\Controllers\ProdutoController;
 use App\Http\Controllers\EmpresaController;
 use App\Http\Controllers\ServicoController;
 use App\Http\Controllers\OrdemServicoController;
-
-
+use App\Http\Controllers\OrderController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -58,6 +57,8 @@ Route::middleware('auth:sanctum')->group(function(){
     Route::get('/ordemservicos/{id}', [OrdemServicoController::class, 'show']);
     Route::put('/ordemservicos/{id}', [OrdemServicoController::class, 'update']);
     Route::delete('/ordemservicos/{id}', [OrdemServicoController::class,'destroy']);
+
+    Route::post('/order', [OrderController::class, 'store']);
 
 });
 
