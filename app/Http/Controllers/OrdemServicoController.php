@@ -100,7 +100,7 @@ class OrdemServicoController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(OrdemServico $id)
+    public function destroy($id)
     {
         $ordemservicos = OrdemServico::find($id);
         if (!$ordemservicos) {
